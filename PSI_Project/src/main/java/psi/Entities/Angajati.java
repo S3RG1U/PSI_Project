@@ -1,15 +1,19 @@
-package formular;
+package psi.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import psi.project.model.entity.AbstractEntity;
+import psi.metamodel.AbstractEntity;
+
 
 @Entity
+@Table(name = "Angajati")
+
 public class Angajati extends AbstractEntity{
 
-	private String codAngajat;
-	private String numeAngajat;
-	private String functieAngajat;
+	 String codAngajat;
+	 String numeAngajat;
+	 String functieAngajat;
 	
 	public Angajati(String codAngajat, String numeAngajat, String functieAngajat) {
 		super();
