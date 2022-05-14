@@ -19,16 +19,7 @@ public class LinieDocument extends AbstractEntity {
 	MijlocFix mijlocfix;
 	Document document;
 	 
-	public LinieDocument(){
-	super();
-	}	
 	
-	public LinieDocument( Double cantitate, Double valoareInventar, MijlocFix mijlocfix) {
-		this();
-		this.cantitate = cantitate;
-		this.valoare = valoareInventar;
-		this.mijlocfix = mijlocfix;
-	}
 	public Double getCantitate() {
 		return cantitate;
 	}
@@ -60,4 +51,15 @@ public class LinieDocument extends AbstractEntity {
 	public void setDocument(Document document) {
 		this.document = document;
 	}
+	
+	public LinieDocument(){
+		super();
+		}	
+		
+		public LinieDocument( Double cantitate, Double valoareInventar, MijlocFix mijlocfix) {
+			this();
+			this.cantitate = cantitate;
+			this.valoare = valoareInventar;
+			this.mijlocfix = mijlocfix;
+		}
 }

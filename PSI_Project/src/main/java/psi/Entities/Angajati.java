@@ -15,12 +15,6 @@ public class Angajati extends AbstractEntity{
 	 String numeAngajat;
 	 String functieAngajat;
 	
-	public Angajati(String codAngajat, String numeAngajat, String functieAngajat) {
-		super();
-		this.codAngajat = codAngajat;
-		this.numeAngajat = numeAngajat;
-		this.functieAngajat = functieAngajat;
-	}
 	
 	public String getCodAngajat() {
 		return codAngajat;
@@ -38,6 +32,13 @@ public class Angajati extends AbstractEntity{
 		return functieAngajat;
 	}
 	public void setFunctieAngajat(String functieAngajat) {
+		this.functieAngajat = functieAngajat;
+	}
+	
+	public Angajati(String codAngajat, String numeAngajat, String functieAngajat) {
+		super();
+		this.codAngajat = codAngajat;
+		this.numeAngajat = numeAngajat;
 		this.functieAngajat = functieAngajat;
 	}
 	

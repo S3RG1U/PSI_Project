@@ -26,25 +26,7 @@ public class MijlocFix extends AbstractEntity {
 	private String tipAmortizare;
 	private Boolean folosinta;
 
-	public MijlocFix(String nrMijlocFix, String denumireMijloc, String gestionar, Double valoareMijlocFix, String um,
-			String caractTehnice, Date dataFolosinta, Date dataAmortizareCompleta, Double valoareAmortizare,
-			Double valoareaRamasa, String durataNormalaFunctionare, String tipAmortizare, Boolean folosinta) {
-		super();
-		NrMijlocFix = nrMijlocFix;
-		this.denumireMijloc = denumireMijloc;
-		this.gestionar = gestionar;
-		this.valoareMijlocFix = valoareMijlocFix;
-		this.um = um;
-		this.caractTehnice = caractTehnice;
-		this.dataFolosinta = dataFolosinta;
-		this.dataAmortizareCompleta = dataAmortizareCompleta;
-		this.valoareAmortizare = valoareAmortizare;
-		this.valoareaRamasa = valoareaRamasa;
-		this.durataNormalaFunctionare = durataNormalaFunctionare;
-		this.tipAmortizare = tipAmortizare;
-		this.folosinta = folosinta;
-	}
-
+	
 	public String getNrMijlocFix() {
 		return NrMijlocFix;
 	}
@@ -146,6 +128,25 @@ public class MijlocFix extends AbstractEntity {
 	}
 
 	public void setFolosinta(Boolean folosinta) {
+		this.folosinta = folosinta;
+	}
+
+	public MijlocFix(String nrMijlocFix, String denumireMijloc, String gestionar, Double valoareMijlocFix, String um,
+			String caractTehnice, Date dataFolosinta, Date dataAmortizareCompleta, Double valoareAmortizare,
+			Double valoareaRamasa, String durataNormalaFunctionare, String tipAmortizare, Boolean folosinta) {
+		super();
+		NrMijlocFix = nrMijlocFix;
+		this.denumireMijloc = denumireMijloc;
+		this.gestionar = gestionar;
+		this.valoareMijlocFix = valoareMijlocFix;
+		this.um = um;
+		this.caractTehnice = caractTehnice;
+		this.dataFolosinta = dataFolosinta;
+		this.dataAmortizareCompleta = dataAmortizareCompleta;
+		this.valoareAmortizare = valoareAmortizare;
+		this.valoareaRamasa = valoareaRamasa;
+		this.durataNormalaFunctionare = durataNormalaFunctionare;
+		this.tipAmortizare = tipAmortizare;
 		this.folosinta = folosinta;
 	}
 

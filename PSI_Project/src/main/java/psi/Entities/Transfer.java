@@ -15,14 +15,7 @@ public class Transfer extends AbstractEntity{
 	@ManyToOne
 	Gestiune gestiuneDestinatie;
 	
-	
-	
-	
-	public Transfer(Gestiune gestiuneSursa, Gestiune gestiuneDestinatie) {
-		this();
-		this.gestiuneSursa = gestiuneSursa;
-		this.gestiuneDestinatie = gestiuneDestinatie;
-	}
+
 	public Gestiune getGestiuneSursa() {
 		return gestiuneSursa;
 	}
@@ -35,7 +28,14 @@ public class Transfer extends AbstractEntity{
 	public void setGestiuneDestinatie(Gestiune gestiuneDestinatie) {
 		this.gestiuneDestinatie = gestiuneDestinatie;
 	}
+	
 	public Transfer(){
 		super();
+	}
+	
+	public Transfer(Gestiune gestiuneSursa, Gestiune gestiuneDestinatie) {
+		this();
+		this.gestiuneSursa = gestiuneSursa;
+		this.gestiuneDestinatie = gestiuneDestinatie;
 	}
 }
