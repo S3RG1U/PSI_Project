@@ -1,5 +1,7 @@
 package psi.Entities;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 import psi.metamodel.AbstractEntity;
@@ -14,11 +16,11 @@ import psi.metamodel.AbstractEntity;
 
 public class Transfer extends AbstractEntity{
 	@ManyToOne
-	Gestiune gestiuneSursa;
+	private Gestiune gestiuneSursa;
 	@ManyToOne
-	Gestiune gestiuneDestinatie;
-	
-	
+	private Gestiune gestiuneDestinatie;
+	private Date DataOperare;
+	private String explicatii;
 
 	public Gestiune getGestiuneSursa() {
 		return gestiuneSursa;
@@ -32,6 +34,20 @@ public class Transfer extends AbstractEntity{
 	public void setGestiuneDestinatie(Gestiune gestiuneDestinatie) {
 		this.gestiuneDestinatie = gestiuneDestinatie;
 	}
+	public Date getDataOperare()
+	{
+		return DataOperare;
+	}
+	public void setDataOperare(Date date) {
+		this.DataOperare = DataOperare;
+	}
+	public String getExplicatii() {
+		return explicatii;
+	}
+	public void setExplicatii(String explicatii) {
+		this.explicatii = explicatii;
+	}
+	
 	public Transfer(){
 		super();
 	}
@@ -40,5 +56,8 @@ public class Transfer extends AbstractEntity{
 		this();
 		this.gestiuneSursa = gestiuneSursa;
 		this.gestiuneDestinatie = gestiuneDestinatie;
+		this.explicatii = explicatii;
 	}
+
+
 }

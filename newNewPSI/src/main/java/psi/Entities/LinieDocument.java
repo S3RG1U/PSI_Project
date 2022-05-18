@@ -1,68 +1,50 @@
 package psi.Entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 import psi.metamodel.AbstractEntity;
 
-/**
- * Entity implementation class for Entity: LineDocument
- *
- */
 @Entity
-@Table(name="LinieDocument")
-
 public class LinieDocument extends AbstractEntity {
+
 	
-	Double cantitate = 0.0;
-	Double valoareInventar = 0.0;
-	@ManyToOne 
+	
+	Double valoareInventar=0.0;
+	@ManyToOne
 	MijlocFix mijlocfix;
 	@ManyToOne
 	Document document;
-	 
 	
-
-	public Double getCantitate() {
-		return cantitate;
-	}
-
-	public void setCantitate(Double cantitate) {
-		this.cantitate = cantitate;
-	}
-
 	public Double getValoareInventar() {
 		return valoareInventar;
 	}
-
 	public void setValoareInventar(Double valoareInventar) {
 		this.valoareInventar = valoareInventar;
 	}
-
 	public MijlocFix getMijlocfix() {
 		return mijlocfix;
 	}
-
 	public void setMijlocfix(MijlocFix mijlocfix) {
 		this.mijlocfix = mijlocfix;
 	}
-
 	public Document getDocument() {
 		return document;
 	}
-
 	public void setDocument(Document document) {
 		this.document = document;
 	}
-	public LinieDocument(){
+	
+	public LinieDocument(Double valoareInventar, MijlocFix mijlocfix, Document document) {
 		super();
-		}	
-		
-		public LinieDocument( Double cantitate, Double valoareInventar, MijlocFix mijlocfix) {
-			this();
-			this.cantitate = cantitate;
-			this.valoareInventar = valoareInventar;
-			this.mijlocfix = mijlocfix;
-		}
-
+		this.valoareInventar = valoareInventar;
+		this.mijlocfix = mijlocfix;
+		this.document = document;
+	}
+	
+	public LinieDocument() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }

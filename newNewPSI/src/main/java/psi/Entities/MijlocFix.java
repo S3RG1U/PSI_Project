@@ -1,11 +1,17 @@
 package psi.Entities;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 
 import psi.metamodel.AbstractEntity;
+import psi.Entities.Gestiune;
 
 
 /**
@@ -14,20 +20,21 @@ import psi.metamodel.AbstractEntity;
  */
 @Entity
 public class MijlocFix extends AbstractEntity {
-	String NrdMijlocFix;
-	String denumireMijloc;
-	String gestionar;
-	Double valoareMijlocFix;
-	String um;
-	String caractTehnice;
-	Date dataFolosinta;
-	Date dataAmortizareCompleta;
-	Double valoareAmortizare;
-	Double valoareaRamasa;
-	String durataNormalaFunctionare;
-	String tipAmortizare;
-	Boolean folosinta;
-	
+	private String NrdMijlocFix;
+	private String denumireMijloc;
+	@ManyToOne
+	private Gestiune gestiune;
+	private String gestionar;
+	private Double valoareMijlocFix;
+	private String um;
+	private String caractTehnice;
+	private Date dataFolosinta;
+	private Date dataAmortizareCompleta;
+	private Double valoareAmortizare;
+	private Double valoareaRamasa;
+	private String durataNormalaFunctionare;
+	private String tipAmortizare;
+	private Boolean folosinta;
 	
 	public String getNrdMijlocFix() {
 		return NrdMijlocFix;
@@ -43,6 +50,14 @@ public class MijlocFix extends AbstractEntity {
 
 	public void setDenumireMijloc(String denumireMijloc) {
 		this.denumireMijloc = denumireMijloc;
+	}
+
+	public Gestiune getGestiune() {
+		return gestiune;
+	}
+
+	public void setGestiune(Gestiune gestiune) {
+		this.gestiune = gestiune;
 	}
 
 	public String getGestionar() {
@@ -133,12 +148,14 @@ public class MijlocFix extends AbstractEntity {
 		this.folosinta = folosinta;
 	}
 
-	public MijlocFix(String nrdMijlocFix, String denumireMijloc, String gestionar, Double valoareMijlocFix, String um,
-			String caractTehnice, Date dataFolosinta, Date dataAmortizareCompleta, Double valoareAmortizare,
-			Double valoareaRamasa, String durataNormalaFunctionare, String tipAmortizare, Boolean folosinta) {
+	public MijlocFix(String nrdMijlocFix, String denumireMijloc, Gestiune gestiune, String gestionar,
+			Double valoareMijlocFix, String um, String caractTehnice, Date dataFolosinta, Date dataAmortizareCompleta,
+			Double valoareAmortizare, Double valoareaRamasa, String durataNormalaFunctionare, String tipAmortizare,
+			Boolean folosinta) {
 		super();
 		NrdMijlocFix = nrdMijlocFix;
 		this.denumireMijloc = denumireMijloc;
+		this.gestiune = gestiune;
 		this.gestionar = gestionar;
 		this.valoareMijlocFix = valoareMijlocFix;
 		this.um = um;
@@ -154,9 +171,8 @@ public class MijlocFix extends AbstractEntity {
 
 	public MijlocFix() {
 		super();
-		
-	}
-
+		// TODO Auto-generated constructor stub
+	}	
 
 
 }

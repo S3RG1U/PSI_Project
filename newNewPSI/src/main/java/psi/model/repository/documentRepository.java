@@ -6,7 +6,7 @@ import psi.Entities.Document;
 public class documentRepository extends AbstractRepository {
 
 	
-	public Document saveDocument(Document document) {
+	public Document salveazaDocument(Document document) {
 		if (document.getId()==null)
 			document=(Document)this.create(document);
 		else 
